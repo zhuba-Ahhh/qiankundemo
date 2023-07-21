@@ -29,7 +29,6 @@ if (!(window as any).__POWERED_BY_QIANKUN__) {
   render({})
 }
 
-
 export async function bootstrap() {
   console.log("[react-ts] react app bootstrap");
 }

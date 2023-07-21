@@ -11,7 +11,7 @@ let app;
 function render(props: any) {
   // history = createWebHistory("/vue");
   history = createWebHistory(process.env.BASE_URL);
-  createRouter({
+  router = createRouter({
     history,
     routes,
   });
