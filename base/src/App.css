@@ -1,0 +1,9 @@
+.router {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+a {
+	margin-left: 20px;
+}

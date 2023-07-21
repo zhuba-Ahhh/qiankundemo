@@ -1,0 +1,25 @@
+{
+  "name": "qiankundemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm-run-all --serial install:*",
+    "install:base": "cd base && pnpm i",
+    "install:vue": "cd vue-ts && pnpm i",
+    "install:react": "cd react-ts && pnpm i",
+    "serve": "npm-run-all --parallel serve:*",
+    "serve:react": "cd react-ts && pnpm start",
+    "serve:vue": "cd vue-ts && pnpm serve",
+    "serve:base": "cd base && pnpm start",
+    "build": "npm-run-all build:* && bash ./scripts/bundle.sh",
+    "build:react": "cd react-ts && pnpm build",
+    "build:vue": "cd vue-ts && pnpm build",
+    "build:base": "cd base && pnpm build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
