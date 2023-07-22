@@ -1,6 +1,6 @@
 const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
-  publicPath: "http://localhost:7001", // 保证子应用静态资源都是向7001端口发送的,此处的端口号和上文中注册的端口号保持一致
+  // publicPath: "", // 保证子应用静态资源都是向7001端口发送的,此处的端口号和上文中注册的端口号保持一致
   devServer: {
     port: 7001, // 启动的端口号也保持一致
     headers: {
