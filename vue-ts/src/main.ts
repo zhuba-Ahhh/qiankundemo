@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Plugin, createApp } from "vue";
 import App from "./App.vue";
 import routes from "./router";
 import { createRouter, createWebHistory } from "vue-router";
+import "./public-path";
 
 // createApp(App).use(router).mount("#app");
 
