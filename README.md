@@ -19,7 +19,18 @@ npm i pnpm -g
 ```
 
 安装依赖
-`pnpm install`
+
+```bash
+pnpm install
+```
+
+本地调试
+
+```bash
+pnpm serve
+```
+
+[open](http://localhost:3000/)
 
 ## Build
 
