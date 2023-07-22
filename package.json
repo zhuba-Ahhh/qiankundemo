@@ -12,10 +12,14 @@
     "serve:react": "cd react-ts && pnpm start",
     "serve:vue": "cd vue-ts && pnpm serve",
     "serve:base": "cd base && pnpm start",
-    "build": "npm-run-all build:* && bash ./scripts/bundle.sh",
+    "build": "pnpm clear && npm-run-all build:* && bash ./scripts/bundle.sh",
     "build:react": "cd react-ts && pnpm build",
     "build:vue": "cd vue-ts && pnpm build",
-    "build:base": "cd base && pnpm build"
+    "build:base": "cd base && pnpm build",
+    "clear": "npm-run-all clear:*",
+    "clear:base": "cd base && rm -rf build",
+    "clear:react": "cd react-ts && rm -rf build",
+    "clear:vue": "cd vue-ts && rm -rf dist"
   },
   "keywords": [],
   "author": "",
