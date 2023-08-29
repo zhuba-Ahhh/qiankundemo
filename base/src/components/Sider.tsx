@@ -16,21 +16,29 @@ const SiderComponent: React.FC<SiderComponentProps> = (props) => {
     setCollapsed(!collapsed);
   };
 
+  const divStyle: React.CSSProperties = {
+    height: '100%',
+    // width: '24px',
+    // display: 'flex',
+    // alignItems: 'center',
+    // justifyContent: 'center',
+  }
+
   const menuItems = [
     {
       key: "vue",
-      icon: <VueSvg width={24} height={24} />,
+      icon: <div style={divStyle}><VueSvg width={24} height={24} /></div>,
       label: "Vue",
     },
     {
       key: "react",
-      icon: <ReactSvg width={24} height={24} />,
+      icon: <div style={divStyle}><ReactSvg width={24} height={24} /></div>,
       label: "React",
     },
   ];
 
   return (
-    <Sider collapsible collapsed={collapsed} onCollapse={toggleCollapsed}>
+    <Sider collapsible collapsed={collapsed} onCollapse={toggleCollapsed} collapsedWidth={70} width={120}>
       <Menu
         theme="dark"
         defaultSelectedKeys={["Vue"]}
