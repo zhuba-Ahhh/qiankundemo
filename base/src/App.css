@@ -4,10 +4,6 @@
 	justify-content: center;
 }
 
-a {
-	margin-left: 20px;
-}
-
 div[id^='__qiankun_microapp_wrapper_'] {
 	height: 100%;
 }

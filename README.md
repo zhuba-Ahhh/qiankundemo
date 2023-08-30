@@ -30,7 +30,7 @@ pnpm install
 pnpm serve
 ```
 
-[open](http://localhost:3000/)
+[Open](http://localhost:3000/)
 
 ## Build
 

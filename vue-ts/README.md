@@ -1,24 +1,11 @@
-# vue-ts
+# Vue 子项目所遇问题记录
 
-## Project setup
-```
-pnpm install
-```
+## 样式
 
-### Compiles and hot-reloads for development
-```
-pnpm run serve
-```
+### 子应用容器样式
 
-### Compiles and minifies for production
-```
-pnpm run build
-```
+## 交互
 
-### Lints and fixes files
-```
-pnpm run lint
-```
+### 路由
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+子应用路由应加上routerBase，且需唯一
