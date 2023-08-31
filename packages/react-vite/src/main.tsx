@@ -5,10 +5,9 @@ import {
   qiankunWindow,
 } from "vite-plugin-qiankun/dist/helper";
 import App from "./App.tsx";
-import "./public-path";
 import "./index.css";
 
-let root: Root;
+let root: Root = ReactDOM.createRoot(document.querySelector("#root") as Element);
 
 const initQianKun = () => {
   renderWithQiankun({
