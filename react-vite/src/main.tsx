@@ -1,13 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import "./public-path";
-import "./index.css";
-
+import ReactDOM, { Root } from "react-dom/client";
 import {
   renderWithQiankun,
   qiankunWindow,
 } from "vite-plugin-qiankun/dist/helper";
+import App from "./App.tsx";
+import "./public-path";
+import "./index.css";
+
+let root: Root;
 
 const initQianKun = () => {
   renderWithQiankun({
@@ -28,18 +29,18 @@ const initQianKun = () => {
 };
 
 const render = (container?: Element) => {
-  const appDom = container ?? document.getElementById("app");
-  appDom &&
-    ReactDOM.createRoot(appDom).render(
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    );
+  if (container && container.querySelector("#root")) {
+    root = ReactDOM.createRoot(container.querySelector("#root") as Element);
+  }
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
 };
 
 const unmount = async () => {
-  const appDom = document.getElementById("app");
-  appDom && ReactDOM.createRoot(appDom).unmount();
+  root.unmount();
 };
 
 if (qiankunWindow.__POWERED_BY_QIANKUN__) {

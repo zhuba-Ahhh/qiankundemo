@@ -1,12 +1,16 @@
 import { App as VueApp, createApp } from "vue";
 import "./style.css";
-import App from "./App.vue";
 import "./public-path";
+import App from "./App.vue";
+import {
+  renderWithQiankun,
+  qiankunWindow,
+} from "vite-plugin-qiankun/dist/helper";
 
 // let history;
 // let router: Plugin | null;
 let app: VueApp<Element> | null;
-function render(props: any) {
+function render(props?: any) {
   // history = createWebHistory("/vue");
   //   history = createWebHistory(process.env.BASE_URL);
   //   router = createRouter({
@@ -20,24 +24,30 @@ function render(props: any) {
   app.mount(container ? container.querySelector("#app") : "#app");
 }
 
-if (!(window as any).__POWERED_BY_QIANKUN__) {
-  // 该应用没有加入到父应用中，独立运行
-  render({});
-}
+const initQianKun = () => {
+  renderWithQiankun({
+    mount: (props) => {
+      console.log("vue-vite app mount", props);
+      render(props);
+    },
+    bootstrap: async () => {
+      console.log("vue-vite app bootstraped");
+    },
+    unmount: async () => {
+      console.log("vue-vite app unmount");
+      await app?.unmount();
+      //   history = null; // 当子应用被卸载后我们将路由等全部清空
+      app = null;
+      //   router = null;
+    },
+    update: async () => {
+      throw new Error("Function not implemented.");
+    },
+  });
+};
 
-// 需要暴露接入协议
-export async function bootstrap() {
-  console.log("vue-vite app bootstraped");
-}
-export async function mount(props: any) {
-  // 参数props包含了主应用中的注册信息
-  console.log("vue-vite app mount", props);
-  render(props);
-}
-export async function unmount() {
-  console.log("vue-vite app unmount");
-  app?.unmount();
-  //   history = null; // 当子应用被卸载后我们将路由等全部清空
-  app = null;
-  //   router = null;
+if (qiankunWindow.__POWERED_BY_QIANKUN__) {
+  initQianKun();
+} else {
+  render();
 }
