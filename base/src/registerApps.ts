@@ -19,6 +19,16 @@ registerMicroApps(
       }
     },
     {
+      name: "vue-vite",
+      entry: "//localhost:5173",
+      container: "#container",
+      activeRule: "/vue-vite",
+      loader,
+      props: {
+        routerBase: "/vue-vite",
+      }
+    },
+    {
       name: "react-ts",
       entry: "//localhost:3001",
       container: "#container",
@@ -26,6 +36,16 @@ registerMicroApps(
       loader,
       props: {
         routerBase: "/react",
+      }
+    },
+    {
+      name: "react-vite",
+      entry: "//localhost:5174",
+      container: "#container",
+      activeRule: "/react-vite",
+      loader,
+      props: {
+        routerBase: "/react-vite",
       }
     },
   ],

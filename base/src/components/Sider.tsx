@@ -31,9 +31,19 @@ const SiderComponent: React.FC<SiderComponentProps> = (props) => {
       label: "Vue",
     },
     {
+      key: "vue-vite",
+      icon: <div style={divStyle}><VueSvg width={24} height={24} /></div>,
+      label: "Vue-Vite",
+    },
+    {
       key: "react",
       icon: <div style={divStyle}><ReactSvg width={24} height={24} /></div>,
       label: "React",
+    },
+    {
+      key: "react-vite",
+      icon: <div style={divStyle}><ReactSvg width={24} height={24} /></div>,
+      label: "React-Vite",
     },
   ];
 

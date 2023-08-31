@@ -8,12 +8,6 @@ let root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
-
 function render(props: any) {
   let { container } = props;
   if (container) {

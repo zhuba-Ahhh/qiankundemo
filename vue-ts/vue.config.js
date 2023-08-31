@@ -1,4 +1,6 @@
 const { defineConfig } = require("@vue/cli-service");
+const packageName = require("./package.json").name;
+
 module.exports = defineConfig({
   // publicPath: "", // 保证子应用静态资源都是向7001端口发送的,此处的端口号和上文中注册的端口号保持一致
   devServer: {
@@ -10,7 +12,7 @@ module.exports = defineConfig({
   configureWebpack: {
     output: {
       libraryTarget: "umd", // 打包格式
-      library: "vue-ts", // 打包成umd格式会挂载到window上，名为vue-ts
+      library: `${packageName}-[name]`, // 打包成umd格式会挂载到window上，名为vue-ts
     },
   },
   transpileDependencies: true,
