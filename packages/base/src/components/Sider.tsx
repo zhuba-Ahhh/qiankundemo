@@ -18,10 +18,6 @@ const SiderComponent: React.FC<SiderComponentProps> = (props) => {
 
   const divStyle: React.CSSProperties = {
     height: '100%',
-    // width: '24px',
-    // display: 'flex',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   }
 
   const menuItems = [

@@ -5,9 +5,12 @@ import {
   qiankunWindow,
 } from "vite-plugin-qiankun/dist/helper";
 import App from "./App.tsx";
-import "./index.css";
+import "./styles/css/index.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
-let root: Root = ReactDOM.createRoot(document.querySelector("#root") as Element);
+let root: Root = ReactDOM.createRoot(
+  document.querySelector("#root") as Element
+);
 
 const initQianKun = () => {
   renderWithQiankun({
@@ -33,7 +36,9 @@ const render = (container?: Element) => {
   }
   root.render(
     <React.StrictMode>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </React.StrictMode>
   );
 };

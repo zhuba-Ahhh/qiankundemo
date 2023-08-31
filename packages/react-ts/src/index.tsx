@@ -1,27 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import './public-path';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./styles/css/index.css";
+import App from "./App";
+import "./public-path";
+import { BrowserRouter as Router } from "react-router-dom";
 
-let root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+let root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 function render(props: any) {
   let { container } = props;
   if (container) {
-    root = ReactDOM.createRoot(container.querySelector('#root'));
+    root = ReactDOM.createRoot(container.querySelector("#root"));
   }
   root.render(
     <React.StrictMode>
-      <App />
-    </React.StrictMode>, 
+      <Router>
+        <App />
+      </Router>
+    </React.StrictMode>
   );
 }
 
 if (!(window as any).__POWERED_BY_QIANKUN__) {
-  render({})
+  render({});
 }
 
 export async function bootstrap() {
@@ -30,11 +31,13 @@ export async function bootstrap() {
 
 export async function mount(props: any) {
   console.log("[react-ts] props from main framework", props);
-  render(props)
+  render(props);
 }
 
 export async function unmount(props: any) {
-  // let { container } = props
-  // ReactDOM.unmountComponentAtNode(container ? container.querySelector('#root') : document.getElementById('root'));
-  root.unmount()
+  root.unmount();
+}
+
+export async function update(props: any) {
+  console.log("[react-ts] props from main framework for update", props);
 }

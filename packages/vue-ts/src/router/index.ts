@@ -3,12 +3,16 @@ import HomeView from "../views/HomeView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/vue",
+    path: "",
+    redirect: "/home", // 设置默认路由重定向到 '/home'
+  },
+  {
+    path: "/home",
     name: "home",
     component: HomeView,
   },
   {
-    path: "/vue/about",
+    path: "/about",
     name: "about",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

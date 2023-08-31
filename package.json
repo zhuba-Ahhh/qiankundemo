@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "npm-run-all --serial install:*",
     "serve": "npm-run-all --parallel serve:*",
     "serve:react": "cd packages/react-ts && pnpm start",
     "serve:react-vite": "cd packages/react-vite && pnpm dev",
@@ -18,11 +17,12 @@
     "build:vue-vite": "cd packages/vue-vite && pnpm build",
     "build:base": "cd packages/base && pnpm build",
     "clear": "npm-run-all clear:*",
-    "clear:base": "cd packages/base && rm -rf build",
-    "clear:react": "cd packages/react-ts && rm -rf build",
+    "clear:base": "cd packages/base && rm -rf dist",
+    "clear:react": "cd packages/react-ts && rm -rf dist",
     "clear:react-vite": "cd packages/react-vite && rm -rf dist",
+    "clear:vue": "cd packages/vue-ts && rm -rf dist",
     "clear:vue-vite": "cd packages/vue-vite && rm -rf dist",
-    "clean": "find . -name 'node_modules' -type d -exec rm -rf '{}' +"
+    "clean": "find . -name 'node_modules' -type d -exec rm -rf '{}' + && find . -name 'pnpm-lock.yaml' -type f -exec rm -f '{}' +"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +31,29 @@
     "packages/*"
   ],
   "dependencies": {
-    "npm-run-all": "^4.1.5"
+    "@ant-design/icons": "^5.2.5",
+    "ahooks": "^3.7.8",
+    "antd": "^5.8.5",
+    "element-plus": "^2.3.12",
+    "install": "^0.13.0",
+    "npm-run-all": "^4.1.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2",
+    "react-scripts": "5.0.1",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
+    "vite-plugin-qiankun": "^1.0.15",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.38",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "babel-plugin-component": "^1.1.1",
+    "typescript": "^5.0.2",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^4.4.5"
   }
 }

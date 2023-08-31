@@ -1,12 +1,12 @@
 <template>
   <nav>
-    <router-link to="/vue">Home</router-link> |
-    <router-link to="/vue/about">About</router-link>
+    <router-link to="/home">Home</router-link> |
+    <router-link to="/about">About</router-link>
   </nav>
   <router-view />
 </template>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,4 +1,8 @@
 const { defineConfig } = require("@vue/cli-service");
+const AutoImport = require("unplugin-auto-import/webpack");
+const Components = require("unplugin-vue-components/webpack");
+const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
+
 const packageName = require("./package.json").name;
 
 module.exports = defineConfig({
@@ -14,6 +18,14 @@ module.exports = defineConfig({
       libraryTarget: "umd", // 打包格式
       library: `${packageName}-[name]`, // 打包成umd格式会挂载到window上，名为vue-ts
     },
+    plugins: [
+      AutoImport({
+        resolvers: [ElementPlusResolver()],
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()],
+      }),
+    ],
   },
   transpileDependencies: true,
 });
