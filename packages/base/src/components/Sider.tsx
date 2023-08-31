@@ -44,7 +44,7 @@ const SiderComponent: React.FC<SiderComponentProps> = (props) => {
   ];
 
   return (
-    <Sider collapsible collapsed={collapsed} onCollapse={toggleCollapsed} collapsedWidth={70} width={120}>
+    <Sider collapsible collapsed={collapsed} onCollapse={toggleCollapsed} collapsedWidth={80} width={160}>
       <Menu
         theme="dark"
         defaultSelectedKeys={["Vue"]}

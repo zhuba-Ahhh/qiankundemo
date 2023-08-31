@@ -35,6 +35,7 @@ export async function mount(props: any) {
 }
 
 export async function unmount(props: any) {
+  console.log("[react-ts] props from main framework unmount", props);
   root.unmount();
 }
 
