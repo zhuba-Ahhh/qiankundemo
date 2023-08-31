@@ -26,7 +26,8 @@
     "clear:base": "cd base && rm -rf build",
     "clear:react": "cd react-ts && rm -rf build",
     "clear:react-vite": "cd react-vite && rm -rf dist",
-    "clear:vue-vite": "cd vue-vite && rm -rf dist"
+    "clear:vue-vite": "cd vue-vite && rm -rf dist",
+    "clean": "find . -name 'node_modules' -type d -exec rm -rf '{}' +"
   },
   "keywords": [],
   "author": "",
