@@ -1,3 +1,4 @@
 export interface propsType {
-  routerBase: string;
+  routerBase?: string;
+  container?: any;
 }

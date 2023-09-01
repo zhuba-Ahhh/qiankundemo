@@ -1,12 +1,13 @@
 import React from "react";
+import App from "./App.tsx";
+import "./styles/css/index.css";
 import ReactDOM, { Root } from "react-dom/client";
+import { BrowserRouter as Router } from "react-router-dom";
 import {
   renderWithQiankun,
   qiankunWindow,
 } from "vite-plugin-qiankun/dist/helper";
-import App from "./App.tsx";
-import "./styles/css/index.css";
-import { BrowserRouter as Router } from "react-router-dom";
+import { propsType } from "../../../types";
 
 let root: Root = ReactDOM.createRoot(
   document.querySelector("#root") as Element
@@ -14,9 +15,9 @@ let root: Root = ReactDOM.createRoot(
 
 const initQianKun = () => {
   renderWithQiankun({
-    mount: (props) => {
+    mount: (props: propsType) => {
       console.log("[react-vite] props from main framework", props);
-      render(props.container);
+      render(props);
     },
     bootstrap: async () => {
       console.log("[react-vite] react app bootstrap");
@@ -30,14 +31,14 @@ const initQianKun = () => {
   });
 };
 
-const render = (container?: Element) => {
+const render = ({ container, routerBase }: propsType) => {
   if (container && container.querySelector("#root")) {
     root = ReactDOM.createRoot(container.querySelector("#root") as Element);
   }
   root.render(
     <React.StrictMode>
       <Router>
-        <App />
+        <App routerBase={routerBase ? routerBase : ""} />
       </Router>
     </React.StrictMode>
   );
@@ -50,5 +51,5 @@ const unmount = async () => {
 if (qiankunWindow.__POWERED_BY_QIANKUN__) {
   initQianKun();
 } else {
-  render();
+  render({});
 }

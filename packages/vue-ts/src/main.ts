@@ -9,9 +9,7 @@ let history;
 let router: Plugin | null;
 let app: VueApp<Element> | null;
 function render(props: any) {
-  // history = createWebHistory("/vue");
   const { routerBase } = props;
-  // console.log(process.env.BASE_URL, routerBase);
   history = createWebHistory(routerBase);
   router = createRouter({
     history,
