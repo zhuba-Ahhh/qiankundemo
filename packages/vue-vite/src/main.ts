@@ -24,6 +24,8 @@ function render(container?: any) {
   app.mount(container ? container.querySelector("#app") : "#app");
 }
 
+let headStyles = []
+
 const initQianKun = () => {
   renderWithQiankun({
     mount: (props) => {

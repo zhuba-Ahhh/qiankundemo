@@ -6,6 +6,8 @@ const loader = (loading: any) => {
   console.log(loading);
 };
 
+let styleMap = new Map<string, Element[]>();
+
 registerMicroApps(
   [
     {
@@ -15,8 +17,8 @@ registerMicroApps(
       activeRule: "/vue", // 在路径为xxx的时候让子应用渲染
       loader, // loader是乾坤提供的一个类似于加载中的函数、
       props: {
-        routerBase: "/vue"
-      }
+        routerBase: "/vue",
+      },
     },
     {
       name: "vue-vite",
@@ -26,7 +28,7 @@ registerMicroApps(
       loader,
       props: {
         routerBase: "/vue-vite",
-      }
+      },
     },
     {
       name: "react-ts",
@@ -36,7 +38,7 @@ registerMicroApps(
       loader,
       props: {
         routerBase: "/react",
-      }
+      },
     },
     {
       name: "react-vite",
@@ -46,7 +48,7 @@ registerMicroApps(
       loader,
       props: {
         routerBase: "/react-vite",
-      }
+      },
     },
   ],
   {
@@ -54,10 +56,40 @@ registerMicroApps(
     beforeLoad: (app: any) => {
       // 加载微应用前，加载进度条
       console.log("before load", app.name);
+      Array.from(document.getElementsByTagName("head")[0].children)
+        .filter((item) => item.tagName === "STYLE")
+        .forEach((element) => {
+          element.setAttribute("data-app", "main");
+        });
       return Promise.resolve();
     },
     beforeMount: (app: any) => {
       console.log("子应用挂载前", app.name);
+      let appStyleList: Element[] = [];
+      Array.from(document.getElementsByTagName("head")[0].children)
+        .filter((item) => item.tagName === "STYLE")
+        .forEach((element) => {
+          let attr = element.getAttribute("data-app");
+          if (!attr) {
+            element.setAttribute("data-app", app.name);
+            appStyleList.push(element);
+            document
+              .getElementsByTagName("qiankun-head")[0]
+              .appendChild(element);
+          }
+          if (attr !== "main" && attr) {
+            element.remove();
+          }
+        });
+
+      let styleList = styleMap.get(app.name);
+      if (styleList) {
+        styleList.forEach((s) => {
+          document.getElementsByTagName("qiankun-head")[0].appendChild(s);
+        });
+      } else {
+        styleMap.set(app.name, appStyleList);
+      }
       return Promise.resolve();
     },
     // qiankun 生命周期钩子 - 微应用挂载后
@@ -80,6 +112,6 @@ registerMicroApps(
 // 调用start用于启动子应用
 start({
   sandbox: {
-    experimentalStyleIsolation: true
-  }
+    experimentalStyleIsolation: true,
+  },
 });
