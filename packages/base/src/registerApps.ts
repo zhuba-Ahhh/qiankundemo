@@ -1,6 +1,6 @@
 // 使用qiankun来注册应用
 
-import { registerMicroApps, start } from "qiankun";
+import { registerMicroApps, setDefaultMountApp, start } from "qiankun";
 
 const loader = (loading: any) => {
   console.log(loading);
@@ -12,7 +12,7 @@ registerMicroApps(
   [
     {
       name: "vue-ts", // 子应用的名称
-      entry: "//localhost:7001", // 子应用的访问地址
+      entry: "//localhost:4003", // 子应用的访问地址
       container: "#container", // 子应用应该挂载的位置（后面会解释）
       activeRule: "/vue", // 在路径为xxx的时候让子应用渲染
       loader, // loader是乾坤提供的一个类似于加载中的函数、
@@ -22,7 +22,7 @@ registerMicroApps(
     },
     {
       name: "vue-vite",
-      entry: "//localhost:5173",
+      entry: "//localhost:4004",
       container: "#container",
       activeRule: "/vue-vite",
       loader,
@@ -32,7 +32,7 @@ registerMicroApps(
     },
     {
       name: "react-ts",
-      entry: "//localhost:3001",
+      entry: "//localhost:4001",
       container: "#container",
       activeRule: "/react",
       loader,
@@ -42,7 +42,7 @@ registerMicroApps(
     },
     {
       name: "react-vite",
-      entry: "//localhost:5174",
+      entry: "//localhost:4002",
       container: "#container",
       activeRule: "/react-vite",
       loader,
@@ -108,6 +108,9 @@ registerMicroApps(
     },
   }
 );
+
+// 设置默认挂载子应用
+setDefaultMountApp('/vue');
 
 // 调用start用于启动子应用
 start({

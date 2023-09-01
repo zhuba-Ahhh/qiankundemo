@@ -8,11 +8,11 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "http://localhost:5173/",
+  base: "http://localhost:4004/",
   server: {
-    port: 5173,
+    port: 4004,
     cors: true,
-    origin: "http://localhost:5173",
+    origin: "http://localhost:4004",
   },
   plugins: [
     vue(),

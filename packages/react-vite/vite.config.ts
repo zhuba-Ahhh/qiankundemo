@@ -4,11 +4,11 @@ import qiankun from "vite-plugin-qiankun";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "http://localhost:5174/",
+  base: "http://localhost:4002/",
   server: {
-    port: 5174,
+    port: 4002,
     cors: true,
-    origin: "http://localhost:5174",
+    origin: "http://localhost:4002",
   },
   plugins: [
     // react(),
