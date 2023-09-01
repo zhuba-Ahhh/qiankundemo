@@ -2,7 +2,7 @@ module.exports = {
   webpack: (config) => {
     config.output.library = 'react-ts'
     config.output.libraryTarget = 'umd'
-    config.output.publicPath = 'http://localhost:3001/'
+    config.output.publicPath = 'http://localhost:4001/'
     config.output.globalObject = 'window';
     return config
   },

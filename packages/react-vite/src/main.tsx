@@ -9,7 +9,7 @@ import {
 } from "vite-plugin-qiankun/dist/helper";
 import { propsType } from "../../../types";
 
-let root: Root = ReactDOM.createRoot(
+let root: Root | null = ReactDOM.createRoot(
   document.querySelector("#root") as Element
 );
 
@@ -32,10 +32,10 @@ const initQianKun = () => {
 };
 
 const render = ({ container, routerBase }: propsType) => {
-  if (container && container.querySelector("#root")) {
+  if (!root && container && container.querySelector("#root")) {
     root = ReactDOM.createRoot(container.querySelector("#root") as Element);
   }
-  root.render(
+  root?.render(
     <React.StrictMode>
       <Router>
         <App routerBase={routerBase ? routerBase : ""} />
@@ -45,7 +45,11 @@ const render = ({ container, routerBase }: propsType) => {
 };
 
 const unmount = async () => {
-  root.unmount();
+  if (root) {
+    root.unmount();
+    root = null;
+    return;
+  }
 };
 
 if (qiankunWindow.__POWERED_BY_QIANKUN__) {

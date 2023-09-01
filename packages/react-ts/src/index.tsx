@@ -1,18 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./styles/css/index.css";
 import App from "./App";
 import "./public-path";
+import React from "react";
+import "./styles/css/index.css";
+import ReactDOM, { Root } from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 
-let root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+let root: Root | null = ReactDOM.createRoot(
+  document.querySelector("#root") as Element
+);
 
 function render(props: any) {
   let { container } = props;
-  if (container) {
-    root = ReactDOM.createRoot(container.querySelector("#root"));
+  if (!root && container && container.querySelector("#root")) {
+    root = ReactDOM.createRoot(container.querySelector("#root") as Element);
   }
-  root.render(
+  root?.render(
     <React.StrictMode>
       <Router>
         <App />
@@ -25,6 +27,7 @@ if (!(window as any).__POWERED_BY_QIANKUN__) {
   render({});
 }
 
+// 导出 bootstrap 函数
 export async function bootstrap() {
   console.log("[react-ts] react app bootstrap");
 }
@@ -36,7 +39,11 @@ export async function mount(props: any) {
 
 export async function unmount(props: any) {
   console.log("[react-ts] props from main framework unmount", props);
-  root.unmount();
+  if (root) {
+    root.unmount();
+    root = null;
+    return;
+  }
 }
 
 export async function update(props: any) {
