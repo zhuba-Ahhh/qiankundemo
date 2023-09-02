@@ -1,6 +1,5 @@
 import { App as VueApp, createApp } from "vue";
 import "./styles/css/style.css";
-import "./public-path";
 import App from "./App.vue";
 import routes from "./router";
 import { propsType } from "../../../types";
