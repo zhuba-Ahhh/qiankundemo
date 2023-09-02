@@ -1,13 +1,13 @@
 import "./styles/css/App.css";
-import HomeView from "./views/HomeView";
 import { Route, Routes } from "react-router-dom";
-import { propsType } from "../../../types";
+import routes from "./router";
 
-const App: React.FC<propsType> = () => {
+const App: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomeView />} />
-      <Route path="*" element={<HomeView />} />
+      {routes.map((route) => (
+        <Route path={route.path} element={route.element()} />
+      ))}
     </Routes>
   );
 };

@@ -10,13 +10,13 @@ let root: Root | null = ReactDOM.createRoot(
 );
 
 function render(props: any) {
-  let { container } = props;
+  let { container, routerBase } = props;
   if (!root && container && container.querySelector("#root")) {
     root = ReactDOM.createRoot(container.querySelector("#root") as Element);
   }
   root?.render(
     <React.StrictMode>
-      <Router>
+      <Router basename={(window as any).__POWERED_BY_QIANKUN__ ? routerBase : '/'}>
         <App />
       </Router>
     </React.StrictMode>

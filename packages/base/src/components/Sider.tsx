@@ -3,6 +3,7 @@ import { Menu, Layout } from "antd";
 import { ReactComponent as VueSvg } from "../img/svg/Vue.svg";
 import { ReactComponent as ReactSvg } from "../img/svg/React.svg";
 import { ReactComponent as HtmlSvg } from "../img/svg/Html.svg";
+import "../style/scss/sider.scss";
 
 const { Sider } = Layout;
 
@@ -27,6 +28,11 @@ const SiderComponent: React.FC<SiderComponentProps> = (props) => {
       key: "vue",
       icon: <div style={divStyle}><VueSvg width={24} height={24} /></div>,
       label: "Vue",
+    },
+    {
+      key: "vue-tsx",
+      icon: <div style={divStyle}><VueSvg width={24} height={24} /></div>,
+      label: "Vue-Tsx",
     },
     {
       key: "vue-vite",
