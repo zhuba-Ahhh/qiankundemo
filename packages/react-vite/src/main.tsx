@@ -37,8 +37,8 @@ const render = ({ container, routerBase }: propsType) => {
   }
   root?.render(
     <React.StrictMode>
-      <Router>
-        <App routerBase={routerBase ? routerBase : ""} />
+      <Router basename={qiankunWindow?.__POWERED_BY_QIANKUN__ ? routerBase : '/'}>
+        <App />
       </Router>
     </React.StrictMode>
   );

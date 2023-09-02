@@ -2,10 +2,9 @@
   "name": "react-ts",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "start": "rescripts start",
+    "build": "rescripts build"
   },
   "eslintConfig": {
     "extends": [
