@@ -9,6 +9,7 @@
     "dev:react-vite": "cd packages/react-vite && pnpm dev",
     "dev:vue": "cd packages/vue-ts && pnpm serve",
     "dev:vue-vite": "cd packages/vue-vite && pnpm dev",
+    "dev:purehtml": "cd packages/purehtml && pnpm start",
     "dev:base": "cd packages/base && pnpm start",
     "build": "npm-run-all build:* && cd scripts && bash bundle.sh",
     "build:react": "cd packages/react-ts && pnpm build",
@@ -16,13 +17,8 @@
     "build:vue": "cd packages/vue-ts && pnpm build",
     "build:vue-vite": "cd packages/vue-vite && pnpm build",
     "build:base": "cd packages/base && pnpm build",
-    "clear": "npm-run-all clear:* && rm -rf dist",
-    "clear:base": "cd packages/base && rm -rf dist",
-    "clear:react": "cd packages/react-ts && rm -rf dist",
-    "clear:react-vite": "cd packages/react-vite && rm -rf dist",
-    "clear:vue": "cd packages/vue-ts && rm -rf dist",
-    "clear:vue-vite": "cd packages/vue-vite && rm -rf dist",
-    "clean": "find . -name 'node_modules' -type d -exec rm -rf '{}' + && find . -name 'pnpm-lock.yaml' -type f -exec rm -f '{}' +"
+    "clear": "rm -rf dist",
+    "clean": "find . -name 'node_modules' -type d -exec rm -rf '{}' + & find . -name 'pnpm-lock.yaml' -type f -exec rm -f '{}' +"
   },
   "keywords": [],
   "author": "",

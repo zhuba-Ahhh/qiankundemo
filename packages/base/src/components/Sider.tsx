@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Menu, Layout } from "antd";
 import { ReactComponent as VueSvg } from "../img/svg/Vue.svg";
 import { ReactComponent as ReactSvg } from "../img/svg/React.svg";
+import { ReactComponent as HtmlSvg } from "../img/svg/Html.svg";
+
 const { Sider } = Layout;
 
 interface SiderComponentProps {
@@ -41,13 +43,18 @@ const SiderComponent: React.FC<SiderComponentProps> = (props) => {
       icon: <div style={divStyle}><ReactSvg width={24} height={24} /></div>,
       label: "React-Vite",
     },
+    {
+      key: "purehtml",
+      icon: <div style={divStyle}><HtmlSvg width={24} height={24} /></div>,
+      label: "Html",
+    },
   ];
 
   return (
     <Sider collapsible collapsed={collapsed} onCollapse={toggleCollapsed} collapsedWidth={80} width={160}>
       <Menu
         theme="dark"
-        defaultSelectedKeys={["Vue"]}
+        defaultSelectedKeys={["vue"]}
         mode="inline"
         items={menuItems}
         onClick={({ key }) => routerPush(key)}

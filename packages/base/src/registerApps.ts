@@ -50,6 +50,16 @@ registerMicroApps(
         routerBase: "/react-vite",
       },
     },
+    {
+      name: "purehtml",
+      entry: "//localhost:4005",
+      container: "#container",
+      activeRule: "/purehtml",
+      loader,
+      props: {
+        routerBase: "/purehtml",
+      },
+    },
   ],
   {
     // 乾坤为提供了一系列的生命周期函数，会在子应用加载前后生效
