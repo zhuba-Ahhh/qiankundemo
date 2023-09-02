@@ -114,7 +114,8 @@ setDefaultMountApp('/vue');
 
 // 调用start用于启动子应用
 start({
+  prefetch: true, // 开启预加载
   sandbox: {
-    experimentalStyleIsolation: true,
+    experimentalStyleIsolation: true, //   开启沙箱模式,实验性方案
   },
 });
