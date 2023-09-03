@@ -1,6 +1,6 @@
 import { computed, defineComponent, ref } from 'vue'
-import { store } from '../Storage'
-import { uuid } from '../utils'
+import { store } from '../utils/Storage'
+import { uuid } from '../../../../utils'
 
 export default defineComponent({
   setup() {

@@ -6,7 +6,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint:fix": "eslint ./src --ext .ts,.tsx,.js,.jsx --fix --ignore-path ./.gitignore",
-    "lint:format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,md,json,less,scss}\"",
+    "lint:format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,md,json,less}\"",
     "lint": "yarn lint:format && yarn lint:fix"
   },
   "devDependencies": {

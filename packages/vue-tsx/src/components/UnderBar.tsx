@@ -1,5 +1,5 @@
 import { defineComponent, PropType } from 'vue'
-import { store } from '../Storage'
+import { store } from '../utils/Storage'
 
 export default defineComponent({
   name: 'UnderBar',

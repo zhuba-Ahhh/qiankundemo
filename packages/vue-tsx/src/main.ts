@@ -34,14 +34,14 @@ function render(props: propsType) {
 const initQianKun = () => {
   renderWithQiankun({
     mount: props => {
-      console.log('vue-vite app mount', props)
+      console.log('vue-tsx app mount', props)
       render(props)
     },
     bootstrap: async () => {
-      console.log('vue-vite app bootstraped')
+      console.log('vue-tsx app bootstraped')
     },
     unmount: async () => {
-      console.log('vue-vite app unmount')
+      console.log('vue-tsx app unmount')
       app?.unmount()
       app = null
       history = null // 当子应用被卸载后我们将路由等全部清空

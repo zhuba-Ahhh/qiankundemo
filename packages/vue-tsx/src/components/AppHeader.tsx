@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue'
+import { defineComponent, VNode } from 'vue'
 import logo from '../assets/logo.png'
 
 export default defineComponent({
