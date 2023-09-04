@@ -1,24 +1,26 @@
+__webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__;
+
 const render = () => {
   // 这里可以在渲染之前做些什么
   return Promise.resolve();
 };
 
 ((global) => {
-  //purehtml 是对应的微应用名称
-  global["purehtml"] = {
+  //html-music 是对应的微应用名称
+  global["html-music"] = {
     bootstrap: () => {
-      console.log("purehtml bootstrap");
+      console.log("html-music bootstrap");
       return Promise.resolve();
     },
     mount: (props) => {
-      console.log("purehtml mount", props);
+      console.log("html-music mount", props);
       props.onGlobalStateChange((state, prev) => {
         console.log(state, prev);
       });
-      return render($);
+      return render();
     },
     unmount: () => {
-      console.log("purehtml unmount");
+      console.log("html-music unmount");
       return Promise.resolve();
     },
   };
