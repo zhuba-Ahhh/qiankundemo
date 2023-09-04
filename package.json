@@ -5,27 +5,29 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
-    "dev:react-ts": "cd packages/react-ts && pnpm start",
+    "dev:react-ts": "cd packages/react-ts && pnpm dev",
     "dev:react-vite": "cd packages/react-vite && pnpm dev",
-    "dev:vue-ts": "cd packages/vue-ts && pnpm serve",
+    "dev:vue-ts": "cd packages/vue-ts && pnpm dev",
     "dev:vue-tsx": "cd packages/vue-tsx && pnpm dev",
     "dev:vue-vite": "cd packages/vue-vite && pnpm dev",
-    "dev:purehtml": "cd packages/purehtml && pnpm start",
-    "dev:base": "cd packages/base && pnpm start",
+    "dev:html-music": "cd packages/html-music && pnpm dev",
+    "dev:html-study": "cd packages/html-study && pnpm dev",
+    "dev:base": "cd packages/base && pnpm dev",
     "build": "npm-run-all build:* && cd scripts && bash bundle.sh",
     "build:react-ts": "cd packages/react-ts && pnpm build",
     "build:react-vite": "cd packages/react-vite && pnpm build",
     "build:vue-ts": "cd packages/vue-ts && pnpm build",
     "build:vue-tsx": "cd packages/vue-tsx && pnpm build",
     "build:vue-vite": "cd packages/vue-vite && pnpm build",
-    "build:purehtml": "cd packages/purehtml && pnpm build",
+    "build:html-music": "cd packages/html-music && pnpm build",
+    "build:html-study": "cd packages/html-study && pnpm build",
     "build:base": "cd packages/base && pnpm build",
     "clear": "rm -rf dist",
     "clean": "find . -name 'node_modules' -type d -exec rm -rf '{}' + & find . -name 'pnpm-lock.yaml' -type f -exec rm -f '{}' +"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "workspaces": [
     "packages/*"
   ],
@@ -51,9 +53,14 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "babel-plugin-component": "^1.1.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "http-server": "^14.1.1",
     "typescript": "^5.0.2",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.25.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }

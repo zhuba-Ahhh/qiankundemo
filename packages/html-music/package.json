@@ -1,0 +1,12 @@
+{
+  "name": "html-music",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "dev": "http-server --cors -p 4005",
+    "build": "node build.js"
+  },
+  "author": "",
+  "license": "MIT"
+}

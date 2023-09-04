@@ -61,13 +61,23 @@ registerMicroApps(
       },
     },
     {
-      name: "purehtml",
+      name: "html-music",
       entry: "//localhost:4005",
       container: "#container",
-      activeRule: "/purehtml",
+      activeRule: "/html-music",
       loader,
       props: {
-        routerBase: "/purehtml",
+        routerBase: "/html-music",
+      },
+    },
+    {
+      name: "html-study",
+      entry: "//localhost:4007",
+      container: "#container",
+      activeRule: "/html-study",
+      loader,
+      props: {
+        routerBase: "/html-study",
       },
     },
   ],

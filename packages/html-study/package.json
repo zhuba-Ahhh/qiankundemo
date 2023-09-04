@@ -1,0 +1,12 @@
+{
+  "name": "html-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "dev": "http-server --cors -p 4007",
+    "build": "node build.js"
+  },
+  "author": "",
+  "license": "MIT"
+}
