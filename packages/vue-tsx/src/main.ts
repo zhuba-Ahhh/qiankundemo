@@ -46,6 +46,7 @@ const initQianKun = () => {
       app = null
       history = null // 当子应用被卸载后我们将路由等全部清空
       router = null
+      // ;(window as any).__VUE_DEVTOOLS_HOOK_REPLAY__ = true
     },
     update: async () => {
       throw new Error('Function not implemented.')

@@ -5,5 +5,6 @@ module.exports = {
   output: {
     filename: './js/entry.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: `localhost:4005`,
   },
 };

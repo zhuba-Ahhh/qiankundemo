@@ -8,7 +8,7 @@
 - react-ts `React + Ts`
 - vue-ts `Vue + Ts`
 
-包管理器推荐`pnpm`, `npm` 和 `yarn`需要自己稍微修改下
+包管理器推荐`pnpm`, `npm` 和 `yarn`需要自己稍微修改下 scripts 脚本
 
 ## Start
 
@@ -30,7 +30,7 @@ pnpm install
 pnpm serve
 ```
 
-[Open](http://localhost:3000/)
+[Open 查看](http://localhost:4000/)
 
 ## Build
 
