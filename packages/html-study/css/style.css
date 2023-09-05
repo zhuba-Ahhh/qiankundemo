@@ -149,7 +149,7 @@ footer {
     text-align: center;
 }
 
-#cleerData,
+#clearData,
 #hideFooterBtn {
     cursor: pointer;
     border: 1px solid #42a5f5;
@@ -160,7 +160,7 @@ footer {
     transition: .3s;
 }
 
-#cleerData:hover,
+#clearData:hover,
 #hideFooterBtn:hover {
     background-color: #42a5f5;
     color: white;

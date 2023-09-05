@@ -170,7 +170,7 @@ function question() {
         <p style="font-size:14px;line-height: 1.5;text-align:left;margin-bottom:5px;"><b>5. </b>时间问题先更新这么多，目前来看已经够用，以后有空了慢慢更新。</p>
         <p style="font-size:14px;line-height: 1.5;text-align:left;margin-bottom:5px;"><b>6. </b>本站由<a href="https://vercel.com/"> Vercel </a> 提供托管服务</p>
         <p style="font-size:14px;line-height: 1.5;text-align:left;margin-bottom:5px;"><b>7. </b>问题反馈（Q/V同号）：<span style="color:#2196f3">18175744945</span></p>
-        <div style="display: flex;align-items: center;justify-content: space-between;"><button id="hideFooterBtn" onclick="hideFooter()">显/隐版权信息</button><button id="cleerData" onclick="clearData()">清除本地数据</button></div>
+        <div style="display: flex;align-items: center;justify-content: space-between;"><button id="hideFooterBtn" onclick="hideFooter()">显/隐版权信息</button><button id="clearData" onclick="clearData()">清除本地数据</button></div>
         `,
     okBtn: "关闭",
   });
