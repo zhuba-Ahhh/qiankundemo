@@ -13,6 +13,7 @@
     "dev:html-music": "cd packages/html-music && pnpm dev",
     "dev:html-study": "cd packages/html-study && pnpm dev",
     "dev:base": "cd packages/base && pnpm dev",
+    "dev:base-vue": "cd packages/vue-ts-base && pnpm dev",
     "build": "npm-run-all build:* && cd scripts && bash bundle.sh",
     "build:react-ts": "cd packages/react-ts && pnpm build",
     "build:react-vite": "cd packages/react-vite && pnpm build",
