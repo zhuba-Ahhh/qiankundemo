@@ -23,6 +23,7 @@
     "build:html-music": "cd packages/html-music && pnpm build",
     "build:html-study": "cd packages/html-study && pnpm build",
     "build:base": "cd packages/base && pnpm build",
+    "build:base-vue": "cd packages/vue-ts-base && pnpm build",
     "clear": "rm -rf dist",
     "clean": "find . -name 'node_modules' -type d -exec rm -rf '{}' + & find . -name 'pnpm-lock.yaml' -type f -exec rm -f '{}' +"
   },
