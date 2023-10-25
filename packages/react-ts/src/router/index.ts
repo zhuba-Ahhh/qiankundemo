@@ -1,17 +1,17 @@
 import HomeView from "../views/HomeView";
 
-export interface routeTpe {
-  path: string,
-  element: () => JSX.Element
+export interface routeType {
+  path: string;
+  element: () => JSX.Element;
 }
 
-const routes: Array<routeTpe> = [
+const routes: Array<routeType> = [
   {
-    path: '/',
+    path: "/",
     element: HomeView,
   },
   {
-    path: '*',
+    path: "*",
     element: HomeView,
   },
 ];
